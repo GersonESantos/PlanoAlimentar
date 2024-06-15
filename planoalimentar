@@ -1,0 +1,72 @@
+#include <stdio.h>
+
+struct Alimento {
+    char nome[30];
+    float quantidade;
+    int calorias;
+};
+
+void imprimirAlimentos(struct Alimento alimentos[], int tamanho) {
+    for (int i = 0; i < tamanho; i++) {
+        printf("%-20s %6.2f g/ml  %4d Kcal\n", alimentos[i].nome, alimentos[i].quantidade, alimentos[i].calorias);
+    }
+}
+
+int main() {
+    struct Alimento cafe_da_manha[] = {
+        {"Cha", 620.0, 0},
+        {"Limonada", 620.0, 0},
+        {"Banana", 125.0, 124},
+        {"Aveia em flocos", 30.0, 118},
+        {"Coco", 20.0, 71},
+        {"Whey 3 Protein", 30.0, 126},
+        {"Yakult", 100.0, 51}
+    };
+
+    struct Alimento almoco[] = {
+        {"Arroz branco", 125.0, 160},
+        {"Feijao carioca", 90.0, 68},
+        {"Cenoura", 50.0, 43},
+        {"Tomate", 25.0, 4},
+        {"Carne Bife", 150.0, 186},
+        {"Limonada", 620.0, 0}
+    };
+
+    struct Alimento lanche_da_tarde[] = {
+        {"Tapioca de goma", 15.0, 37},
+        {"Ovo", 2.0, 129},
+        {"Patinho moida", 120.0, 160},
+        {"Tomate", 25.0, 4},
+        {"Limonada", 620.0, 0}
+    };
+
+    struct Alimento ceia[] = {
+        {"Banana", 125.0, 124},
+        {"Chocolate 70%", 25.0, 245},
+        {"Whey 3 Protein", 30.0, 126},
+        {"Coco", 20.0, 71},
+        {"Castanha", 5.0, 77}
+    };
+
+    printf("12:00 - Cafe da Manha\n");
+    imprimirAlimentos(cafe_da_manha, sizeof(cafe_da_manha) / sizeof(cafe_da_manha[0]));
+    printf("Cal: 490 Kcal  Carb: 74g  Fib: 10g  Prot: 21g  Gor: 15g\n\n");
+
+    printf("14:00 - Almoco\n");
+    imprimirAlimentos(almoco, sizeof(almoco) / sizeof(almoco[0]));
+    printf("Cal: 461 Kcal  Carb: 58g  Fib: 11g  Prot: 40g  Gor: 6g\n\n");
+
+    printf("15:00 - Cafe puro\n\n");
+
+    printf("18:30 - Lanche da Tarde\n");
+    imprimirAlimentos(lanche_da_tarde, sizeof(lanche_da_tarde) / sizeof(lanche_da_tarde[0]));
+    printf("Cal: 330 Kcal  Carb: 11g  Fib: 0g  Prot: 38g  Gor: 13g\n\n");
+
+    printf("22:00 - Ceia\n");
+    imprimirAlimentos(ceia, sizeof(ceia) / sizeof(ceia[0]));
+    printf("Cal: 643 Kcal  Carb: 87g  Fib: 18g  Prot: 25g  Gor: 2g\n\n");
+
+    printf("Calorias totais: 1924 Kcal  Carboidratos: 239g  Fibras: 39g  Proteinas: 124g  Gorduras: 59g\n");
+
+    return 0;
+}

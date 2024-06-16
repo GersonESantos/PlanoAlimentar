@@ -33,6 +33,25 @@ void escreverCSV(struct produto produtos[], int quantidade) {
     printf("Dados gravados com sucesso em saida.csv\n");
 }
 
+void escreverTXT(struct produto produtos[], int quantidade) {
+    // Abrir o arquivo TXT para escrita
+    FILE *file = fopen("saida.txt", "w");
+    if (file == NULL) {
+        printf("Nao foi possivel abrir o arquivo para escrita.\n");
+        exit(1);
+    }
+
+    // Escrever os dados dos produtos no TXT
+    for (int i = 0; i < quantidade; i++) {
+        fprintf(file, "Codigo: %d\nNome: %s\nQuantidade: %.2f\nUnidade: %s\nValor: %.2f\nPosicao X: %d\nPosicao Y: %d\n\n",
+                produtos[i].codigo, produtos[i].nome, produtos[i].quantidade, produtos[i].unidade, produtos[i].valor, produtos[i].posicaox, produtos[i].posicaoy);
+    }
+
+    // Fechar o arquivo
+    fclose(file);
+    printf("Dados gravados com sucesso em saida.txt\n");
+}
+
 int main() {
     struct produto produtos[100];  // Supondo um maximo de 100 produtos para simplificar
     int quantidadeProdutos = 0;
@@ -66,8 +85,9 @@ int main() {
         }
     }
 
-    // Escrever os dados no arquivo CSV
+    // Escrever os dados nos arquivos CSV e TXT
     escreverCSV(produtos, quantidadeProdutos);
+    escreverTXT(produtos, quantidadeProdutos);
 
     return 0;
 }

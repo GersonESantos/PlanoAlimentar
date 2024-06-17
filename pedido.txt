@@ -1,5 +1,5 @@
 
-faça o programa Explicação
+faça o programa em c Explicação
 "
        Plano Alimentar
 12:00 - Café 10g Cha 5g  limao 1

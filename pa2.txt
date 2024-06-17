@@ -1,0 +1,27 @@
+
+---
+
+**Solicitação de Desenvolvimento de Programa em C**
+
+**Objetivo:**
+Desenvolver um programa em linguagem C para gerenciar produtos em um sistema de armazenamento virtual, utilizando estruturas de dados e manipulação de arquivos.
+nome do programa gravar
+**Requisitos Funcionais:**
+1. **Estrutura de Dados:**
+   - Utilizar a estrutura `produto` com os seguintes campos:
+     - `nome` (char[51]):.
+     - `quantidade` (float):.
+     - `unidquant` (char[6]):.
+     - `peso` (float): .
+     - `unidpeso` (char[6]): .
+     
+
+2. **Inserção Manual:**
+   - Permitir a inserção manual de novos produtos
+
+3. **Persistência de Dados:**
+   - Ler e escrever dados em arquivos nos seguintes formatos:
+     - `saida.csv`: formato CSV contendo os campos  `nome`, `quantidade`, `unidquant`, `valor`, `unidpeso`.
+4. colocar o separador decimal é uma vírgula Brasil
+
+

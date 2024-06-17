@@ -1,0 +1,39 @@
+
+---
+
+**Solicitação de Desenvolvimento de Programa em C**
+
+**Objetivo:**
+Desenvolver um programa em linguagem C para gerenciar produtos em um sistema de armazenamento virtual, utilizando estruturas de dados e manipulação de arquivos.
+nome do programa gravar
+**Requisitos Funcionais:**
+1. **Estrutura de Dados:**
+   - Utilizar a estrutura `produto` com os seguintes campos:
+     - `nome` (char[51]):.
+     - `quantidade` (float):.
+     - `unidquant` (char[6]):.
+     - `peso` (float): .
+     - `unidpeso` (char[6]): .
+     
+
+2. **Inserção Manual:**
+   - Permitir a inserção manual de novos produtos
+   -o campo quantidade deve ser digitado no prompt 9999.99 
+   -o campo quantidade deve ser exibido no relatorio  9999.99 
+
+3. **Persistência de Dados:**
+   - Ler e escrever dados em arquivos nos seguintes formatos:
+   - `saida.csv`: formato CSV contendo os campos  `nome`, `quantidade`, `unidquant`, `valor`, `unidpeso`.
+4. **Listar**
+   - Ler os dados no arquivo saida.csv 
+   - mostrar os campos no terminal
+   - complte o campo nome com spaços ate 50 
+   - colocar uma tabulaçao depois de cada ,   
+
+5. coloque um menu G para Gravar  L para listar
+se a reposta for G ou g faça a função **Inserção Manual:**
+se a reposta for L ou l faça a função **Listar:**
+Não coloque acento no fonte nem cedilhas
+
+
+

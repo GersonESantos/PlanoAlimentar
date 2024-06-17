@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h>
+#include <string.h>
 
 typedef struct {
     char nome[51];
@@ -51,27 +51,64 @@ void gravarProdutosCSV(Produto *produtos, int tamanho) {
     fclose(file);
 }
 
-int main() {
-    setlocale(LC_NUMERIC, "C"); // Define a localidade para o padrão C (ponto como separador decimal)
+void listarProdutosCSV() {
+    FILE *file = fopen("saida.csv", "r");
     
-    Produto produtos[100]; // Ajuste este número conforme necessário
+    if (file == NULL) {
+        printf("Erro ao abrir o arquivo.\n");
+        return;
+    }
+    
+    char linha[1024];
+    
+    // Ignora a primeira linha (cabeçalho)
+    fgets(linha, 1024, file);
+
+    while (fgets(linha, 1024, file)) {
+        // Processa cada campo separadamente
+        char *token = strtok(linha, ",");
+        if (token) {
+            // Completa o campo 'nome' com espaços até atingir 50 caracteres
+            printf("%-50s\t", token);
+        }
+
+        while ((token = strtok(NULL, ","))) {
+            printf("%s\t", token);
+        }
+        printf("\n"); // Adiciona uma nova linha após cada registro
+    }
+    
+    fclose(file);
+}
+
+int main() {
+    Produto produtos[100]; // Ajuste este numero conforme necessario
     int tamanho = 0;
     
     char opcao;
     
     do {
-        printf("Deseja inserir um novo produto? (S/N): ");
+        printf("Escolha uma opcao:\nG - Gravar novo produto\nL - Listar produtos\nS - Sair\nOpcao: ");
         scanf(" %c", &opcao);
         
-        if (opcao == 'S' || opcao == 's') {
-            inserirProduto(produtos, &tamanho);
+        switch (opcao) {
+            case 'G':
+            case 'g':
+                inserirProduto(produtos, &tamanho);
+                gravarProdutosCSV(produtos, tamanho);
+                break;
+            case 'L':
+            case 'l':
+                listarProdutosCSV();
+                break;
+            case 'S':
+            case 's':
+                return 0;
+            default:
+                printf("Opcao invalida.\n");
         }
         
-    } while (opcao == 'S' || opcao == 's');
-    
-    gravarProdutosCSV(produtos, tamanho);
-    
-    printf("Produtos gravados com sucesso em saida.csv.\n");
+    } while (opcao != 'S' && opcao != 's');
     
     return 0;
 }

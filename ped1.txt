@@ -49,6 +49,6 @@ desconsiderar acentos e cedilhas
 **Função imprimirPlanoAlimentar** 
 Imprime no arquivo saida.csv e saida.txt
 os detalhes dos alimentos de uma refeição
-calcula o total de calorias
+calcula o total de calorias           
 na ultima linha imprimir totalCaloriasGeral a soma de totalCalorias.
  

@@ -10,9 +10,9 @@ typedef struct {
 } Alimento;
 
 // Função para imprimir plano alimentar e calcular total de calorias
-int impPlaAli(FILE *arquivo, Alimento refeicao[], int tamanho) {
+int imprimirPlanoAlimentar(FILE *arquivo, Alimento refeicao[], int tamanho) {
     int totalCalorias = 0;
-    
+
     for (int i = 0; i < tamanho; i++) {
         fprintf(arquivo, "%s,%.2f,%s\n", refeicao[i].nome, refeicao[i].quantidade, refeicao[i].kcal);
         totalCalorias += atoi(refeicao[i].kcal);
@@ -68,23 +68,23 @@ int main() {
     // Imprimir detalhes das refeições nos arquivos
     fprintf(arquivoCSV, "12:00 - Dejejum\n");
     fprintf(arquivoTXT, "12:00 - Dejejum\n");
-    totalCaloriasGeral += impPlaAli(arquivoCSV, dejejum, sizeof(dejejum) / sizeof(dejejum[0]));
-    impPlaAli(arquivoTXT, dejejum, sizeof(dejejum) / sizeof(dejejum[0]));
+    totalCaloriasGeral += imprimirPlanoAlimentar(arquivoCSV, dejejum, sizeof(dejejum) / sizeof(dejejum[0]));
+    imprimirPlanoAlimentar(arquivoTXT, dejejum, sizeof(dejejum) / sizeof(dejejum[0]));
 
     fprintf(arquivoCSV, "14:00 - Almoco\n");
     fprintf(arquivoTXT, "14:00 - Almoco\n");
-    totalCaloriasGeral += impPlaAli(arquivoCSV, almoco, sizeof(almoco) / sizeof(almoco[0]));
-    impPlaAli(arquivoTXT, almoco, sizeof(almoco) / sizeof(almoco[0]));
+    totalCaloriasGeral += imprimirPlanoAlimentar(arquivoCSV, almoco, sizeof(almoco) / sizeof(almoco[0]));
+    imprimirPlanoAlimentar(arquivoTXT, almoco, sizeof(almoco) / sizeof(almoco[0]));
 
     fprintf(arquivoCSV, "18:30 - Lanche da tarde\n");
     fprintf(arquivoTXT, "18:30 - Lanche da tarde\n");
-    totalCaloriasGeral += impPlaAli(arquivoCSV, lanche, sizeof(lanche) / sizeof(lanche[0]));
-    impPlaAli(arquivoTXT, lanche, sizeof(lanche) / sizeof(lanche[0]));
+    totalCaloriasGeral += imprimirPlanoAlimentar(arquivoCSV, lanche, sizeof(lanche) / sizeof(lanche[0]));
+    imprimirPlanoAlimentar(arquivoTXT, lanche, sizeof(lanche) / sizeof(lanche[0]));
 
     fprintf(arquivoCSV, "22:00 - Ceia\n");
     fprintf(arquivoTXT, "22:00 - Ceia\n");
-    totalCaloriasGeral += impPlaAli(arquivoCSV, ceia, sizeof(ceia) / sizeof(ceia[0]));
-    impPlaAli(arquivoTXT, ceia, sizeof(ceia) / sizeof(ceia[0]));
+    totalCaloriasGeral += imprimirPlanoAlimentar(arquivoCSV, ceia, sizeof(ceia) / sizeof(ceia[0]));
+    imprimirPlanoAlimentar(arquivoTXT, ceia, sizeof(ceia) / sizeof(ceia[0]));
 
     // Imprimir total geral de calorias
     fprintf(arquivoCSV, "Total Calorias Geral,%d Kcal\n", totalCaloriasGeral);

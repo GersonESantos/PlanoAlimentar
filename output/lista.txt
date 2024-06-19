@@ -1,0 +1,18 @@
+Lista de Compras
+Banana,250.00g
+Aveia em flocos,60.00g
+Coco,40.00g
+Whey 3 Protein,60.00g
+Yakult,200.00ml
+Arroz branco,125.00g
+Feijao carioca,90.00g
+Cenoura,50.00g
+Tomate,50.00g
+Carne Bife,150.00g
+Tapioca de goma,15.00g
+Ovo,2.00un
+Patinho moida,120.00g
+Chocolate 70%,25.00g
+Castanha,5.00g
+Limao,2.00un
+

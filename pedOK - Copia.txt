@@ -39,6 +39,7 @@ faça o programa em c Explicação
   
 "
 desconsiderar acentos e cedilhas
+
 **Requisitos Funcionais:**
 1. **Estrutura de `Alimento`:**
    - Utilizar a estrutura `Alimento` com os seguintes campos:
